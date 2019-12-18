@@ -1,0 +1,25 @@
+language: swift
+xcode_scheme: TravisTest
+osx_image: xcode10.2
+
+before_install:
+- bundle install
+- gem update fastlane cocoapods --no-document
+- pod repo update
+
+script:
+- fastlane ci
+- bundle exec danger
+
+after_success:
+  # generate docs
+- jazzy --xcodebuild-arguments -scheme,TravisTest --module TravisTest --source-directory TravisTest --readme README.md
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $ 
+  keep_history: true
+  local_dir: docs
+  on:
+    branch: master

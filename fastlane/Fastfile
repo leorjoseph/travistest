@@ -1,0 +1,24 @@
+# Import base_config from git
+import_from_git(url: 'https://github.com/rakutentech/ios-buildconfig.git')
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Build everything"
+  lane :ci do |options|
+    xcversion(version: "~> 10.2")
+
+    swiftlint(
+      strict: true,
+      ignore_exit_status: false
+    )
+    xcbuild
+  end
+
+  desc "Generate code coverage"
+  lane :coverage do |options|
+    Dir.chdir("..") do
+      sh("bundle exec danger dry_run")
+    end
+  end
+end

@@ -1,0 +1,17 @@
+disabled_rules:
+  - nesting
+cyclomatic_complexity:
+  - 20
+  - 20
+line_length:
+  - 200
+  - 300
+type_body_length:
+  - 300
+  - 400
+function_body_length:
+  - 300
+  - 500
+identifier_name:
+  excluded:
+    - id

@@ -7,12 +7,6 @@ platform :ios do
   desc "Build everything"
   lane :ci do |options|
     xcversion(version: "~> 10.2")
-
-    swiftlint(
-      strict: true,
-      ignore_exit_status: false
-    )
-    xcbuild
   end
 
   desc "Generate code coverage"

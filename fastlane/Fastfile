@@ -6,7 +6,7 @@ default_platform(:ios)
 platform :ios do
   desc "Build everything"
   lane :ci do |options|
-    xcversion(version: "~> 11.2")
+    xcversion(version: "~> 11.1")
   end
 
   desc "Generate code coverage"

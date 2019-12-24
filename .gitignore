@@ -1,0 +1,14 @@
+.DS_Store
+.LSOverride
+xcuserdata
+*.xccheckout
+*.xcworkspace
+*.playground
+build
+Pods
+/artifacts
+/fastlane/report.xml
+/fastlane/README.md
+/fastlane/.env
+docs/
+Gemfile.lock

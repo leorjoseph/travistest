@@ -13,10 +13,9 @@ after_success:
 - jazzy --xcodebuild-arguments -scheme,TravisTest --module TravisTest --source-directory TravisTest --readme README.md
 
 deploy:
-  provider: pages:git
+  provider: pages
   skip_cleanup: true
   token: $GITHUB_TOKEN
-  keep_history: true
   local_dir: docs
   on:
     branch: master

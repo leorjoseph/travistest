@@ -11,7 +11,7 @@ before_install:
 
 after_success:
   # generate docs
-- jazzy --xcodebuild-arguments -scheme,TravisTest --module TravisTest --source-directory TravisTest --readme README.md
+# - jazzy --xcodebuild-arguments -scheme,TravisTest --module TravisTest --source-directory TravisTest --readme README.md
 - bundle exec jazzy
   --source-directory TravisTest
   --readme README.md

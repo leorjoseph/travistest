@@ -10,9 +10,10 @@ before_install:
 # - bundle exec danger
 
 after_success:
-  # generate docs
-# - jazzy --xcodebuild-arguments -scheme,TravisTest --module TravisTest --source-directory TravisTest --readme README.md
+# generate docs
 - bundle exec jazzy
+  --xcodebuild-arguments -scheme,TravisTest
+  --module TravisTest
   --source-directory TravisTest
   --readme README.md
 
@@ -21,5 +22,3 @@ deploy:
   skip_cleanup: true
   token: $GITHUB_TOKEN
   local_dir: docs
-  on:
-    branch: master

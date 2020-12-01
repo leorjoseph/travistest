@@ -1,1 +1,15 @@
 documentation: "*.md"
+
+language: swift
+osx_image: xcode11.2
+os: osx
+
+cache:
+  - bundler
+
+after_success:
+- bundle exec jazzy
+  --xcodebuild-arguments -scheme,TravisTestTests
+  --module TravisTest
+  --source-directory TravisTest
+  --readme README.md
